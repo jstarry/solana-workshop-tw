@@ -6,8 +6,8 @@ tasks:
       solana config set -u testnet
       (cd step-1 && cargo run)
       (cd step-2 && cargo run)
-    command: solana-test-validator
-    command: solana config get
+  - command: solana-test-validator
+  - command: solana config get
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
