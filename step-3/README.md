@@ -42,7 +42,7 @@ For this task, you will learn how to create a program which redeems
 sticker tokens. To redeem a sticker token, it must be destroyed by sending
 a "Burn" instruction to the SPL Token program.
 
-## Task 3B - Code your program!
+## Task 3A - Code your program!
 
 Time to start coding! Open the `/step-3/program/src/lib.rs` file which contains
 instructions for writing your first Solana program.
@@ -53,7 +53,7 @@ When you're finished, run the following command:
 $ cargo build-bpf
 ```
 
-## Task 3C - Deploy your program!
+## Task 3B - Deploy your program!
 
 After building your program, you can deploy it to the blockchain with
 the following command:
@@ -62,7 +62,7 @@ the following command:
 $ solana program deploy ./target/deploy/solana_workshop_tw_step_3.so
 ```
 
-## Task 4C - Call your program!
+## Task 3C - Call your program!
 
 Keep on coding! Open the `/step-3/client/src/main.rs` file which contains
 instructions for calling your Solana program.
