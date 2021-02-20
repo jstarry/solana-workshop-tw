@@ -1,9 +1,10 @@
 image:
   file: .gitpod.Dockerfile
 tasks:
-  - init: |
+  - before: |
       gp env PATH=~/.local/share/solana/install/active_release/bin:$PATH
       solana config set -u testnet
+  - init: |
       (cd step-1 && cargo build)
       (cd step-2 && cargo build)
   - command: solana-test-validator
