@@ -105,3 +105,12 @@ a few Solana packages:
 - `solana-cli-config` - Used to read your keypair for signing transactions
 - `solana-client` - Used for connecting to the Solana cluster through an RPC HTTP API
 - `solana-sdk` - Includes basic types used for creating transactions
+
+## Task 1C - Receive sticker token!
+
+Open up the [Workshop Explorer](https://defi-workshop.netlify.app/) and search for your
+transaction's signature to check if your transaction has been finalized (and permanently stored on
+the blockchain!).
+
+If you're at the in-person workshop, send Justin a link to your transaction to receive
+a Workshop Sticker #1 token :)

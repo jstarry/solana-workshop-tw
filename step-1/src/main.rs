@@ -6,7 +6,6 @@ use std::str::FromStr;
 
 mod utils;
 
-// Used in Step 1
 const MEMO_PROGRAM_ID: &str = "Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo";
 // Enter your own order id to receive a prize!
 const EVENTBRITE_ORDER_ID: u64 = 0;
@@ -24,6 +23,8 @@ fn main() {
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/instruction/struct.Instruction.html#method.new
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/pubkey/struct.Pubkey.html#impl-FromStr
     let memo = format!("GIMME STICKER: {}", EVENTBRITE_ORDER_ID);
+    let memo_program_id = Pubkey::from_str(MEMO_PROGRAM_ID).unwrap(); 
+    // let memo_instruction = Instruction::new(...);
 
     // Step 2: Create a transaction with payer
     // 
@@ -35,9 +36,10 @@ fn main() {
 
     // Step 3: Fetch a recent blockhash
     //  
-    //   In order to prevent duplicate transactions (imagine you pay 50NT for coffee every day)
-    //   each transaction includes a recent blockhash. This blockhash also gives transactions a lifetime
-    //   because a blockhash is only "recent" for about 2 minutes.
+    //   In order to make each transaction unique and prevent duplicate transactions (imagine you perform
+    //   the same transaction of 50 NT to the same coffee shop every day) each transaction includes a
+    //   recent blockhash. This blockhash also gives transactions a lifetime because a blockhash is only
+    //   "recent" for about 2 minutes.
     //
     // Doc hints:
     //  - https://docs.rs/solana-client/1.5.8/solana_client/rpc_client/struct.RpcClient.html#method.get_recent_blockhash
@@ -49,6 +51,7 @@ fn main() {
     //
     // Doc hints:
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/transaction/struct.Transaction.html#method.sign
+    let keypairs = &[&keypair];
 
     // Step 5: Send transaction
     //
