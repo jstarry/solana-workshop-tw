@@ -11,9 +11,9 @@ SPL Links: [[Github]](https://github.com/solana-labs/solana-program-library) [[D
 
 For this workshop, we will be creating SPL Token accounts to receive
 new tokens from the "Workshop Token" mint on the Solana Testnet cluster.
-SPL Token accounts can only hold tokens from one mint and so on Solana,
-users can own many SPL Token accounts. Each of the SPL Token accounts
-specifies the address which owns.
+SPL Token accounts can only hold tokens from one mint. On Solana, users
+can own many SPL Token accounts. Each SPL Token account specifies the
+address of the associated mint and the address of the account that owns it.
 
 ## Task 2A - Learn about accounts
 
@@ -40,6 +40,7 @@ pub struct Account {
 - `epoch`: Unit of time roughly equivalent to 3 days
 - `rent`: Fees required to store data on the blockchain, collected once per epoch
 - `program`: Account that is executable and stores executable bytecode in its `data` vector
+- `token`: A unit of currency (BTC, SOL, Sticker, etc)
 
 #### Ownership
 
@@ -52,8 +53,8 @@ Solana accounts start with the System Program as their owner. The System Program
 to *assign* a new `owner` and *allocate* new `data` for accounts owned by the System Program.
 
 In order to turn a System account into an SPL Token account, we must first *assign* 
-it to the SPL Token program. Then, we can pass this account to the SPL Token program
-to initialize the account with token information.
+it to the SPL Token program which will set its owner to the SPL Token program address.
+Once assigned, we can call SPL Token program with this account to initialize it.
 
 **SPL Token account requirement #1**: Must be owned by the SPL Token program
 

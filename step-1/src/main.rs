@@ -11,8 +11,8 @@ const MEMO_PROGRAM_ID: &str = "Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo";
 const EVENTBRITE_ORDER_ID: u64 = 0;
 
 fn main() {
-    let keypair = utils::load_config_keypair();
-    let pubkey = keypair.pubkey();
+    let my_keypair = utils::load_config_keypair();
+    let my_pubkey = my_keypair.pubkey();
 
     // Step 1: Create an SPL Memo instruction
     //
@@ -32,7 +32,7 @@ fn main() {
     //
     // Doc hints:
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/transaction/struct.Transaction.html#method.new_with_payer
-    let fee_payer = Some(&pubkey);
+    let fee_payer = Some(&my_pubkey);
 
     // Step 3: Fetch a recent blockhash
     //  
@@ -51,7 +51,7 @@ fn main() {
     //
     // Doc hints:
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/transaction/struct.Transaction.html#method.sign
-    let keypairs = &[&keypair];
+    let keypairs = &[&my_keypair];
 
     // Step 5: Send transaction
     //
