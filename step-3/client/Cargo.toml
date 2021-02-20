@@ -1,0 +1,11 @@
+[package]
+name = "solana-workshop-tw-step-3-client"
+version = "0.1.0"
+authors = ["Justin Starry <justin@solana.com>"]
+edition = "2018"
+
+[dependencies]
+solana-cli-config = "1.5.6"
+solana-client = "1.5.8"
+solana-sdk = "1.5.8"
+spl-token = { version = "3.0.1", features = ["no-entrypoint"] }
