@@ -6,10 +6,8 @@ use std::str::FromStr;
 
 mod utils;
 
-// Used in Step 1
 const MEMO_PROGRAM_ID: &str = "Memo1UhkJRfHyvLMcVucJwxXeuD728EqVDDwQDxFMNo";
-// Enter your own order id to receive a prize!
-const EVENTBRITE_ORDER_ID: u64 = 0;
+const EVENTBRITE_ORDER_ID: u64 = 1606954633;
 
 fn main() {
     let keypair = utils::load_config_keypair();
@@ -24,6 +22,11 @@ fn main() {
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/instruction/struct.Instruction.html#method.new
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/pubkey/struct.Pubkey.html#impl-FromStr
     let memo = format!("GIMME STICKER: {}", EVENTBRITE_ORDER_ID);
+    let memo_instruction = Instruction::new(
+        Pubkey::from_str(MEMO_PROGRAM_ID).unwrap(),
+        &memo,
+        Vec::new(),
+    );
 
     // Step 2: Create a transaction with payer
     // 
@@ -32,6 +35,10 @@ fn main() {
     // Doc hints:
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/transaction/struct.Transaction.html#method.new_with_payer
     let fee_payer = Some(&pubkey);
+    let mut tx = Transaction::new_with_payer(
+        &[memo_instruction],
+        fee_payer,
+    );
 
     // Step 3: Fetch a recent blockhash
     //  
@@ -42,6 +49,9 @@ fn main() {
     // Doc hints:
     //  - https://docs.rs/solana-client/1.5.8/solana_client/rpc_client/struct.RpcClient.html#method.get_recent_blockhash
     let rpc_client = utils::new_rpc_client();
+    let (recent_blockhash, _fee_calculator) = rpc_client
+        .get_recent_blockhash()
+        .expect("failed to get recent blockhash");
 
     // Step 4: Sign transaction
     //
@@ -49,6 +59,7 @@ fn main() {
     //
     // Doc hints:
     //  - https://docs.rs/solana-sdk/1.5.8/solana_sdk/transaction/struct.Transaction.html#method.sign
+    tx.sign(&[&keypair], recent_blockhash);
 
     // Step 5: Send transaction
     //
@@ -56,6 +67,9 @@ fn main() {
     //
     // Doc hints:
     //  - https://docs.rs/solana-client/1.5.8/solana_client/rpc_client/struct.RpcClient.html#method.send_and_confirm_transaction_with_spinner
+    rpc_client
+        .send_and_confirm_transaction_with_spinner(&tx)
+        .expect("tx failed");
 
     // Step 6: Uncomment and run `cargo run`
     //
@@ -63,6 +77,6 @@ fn main() {
     //   the workshop block explorer to see if it was successful: https://defi-workshop.netlify.app/
     //
     //  - Note: be sure your transaction variable is named `tx`
-    // println!("Created Memo: {}", memo);
-    // println!("Transaction Signature: {}", utils::tx_signature(&tx));
+    println!("Created Memo: {}", memo);
+    println!("Transaction Signature: {}", utils::tx_signature(&tx));
 }
