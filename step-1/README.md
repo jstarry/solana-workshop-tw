@@ -1,7 +1,7 @@
-# Send a Transaction
+# Step 1 - Send a Transaction
 
 The goal of this step is to use Rust to send a Solana transaction
-to a Solana cluster.
+to the Solana testnet cluster.
 
 A Solana transaction is a combination of a "message" and a list of
 signatures. A message is an ordered list of instructions which will
@@ -19,13 +19,13 @@ instruction. The instruction will call the SPL Memo on-chain program. The
 memo program doesn't actually do anything. Its purpose is to provide a
 standard way to attach a text message to a transaction.
 
-## Task 1
-
 On Solana, every transaction must pay fees to be processed. To pay fees,
 each transaction specifies an account called the "fee payer" which will
 be used to pay transaction fees. Transaction fees are paid using SOL, the
 native crypto currency used on Solana. The smallest unit of SOL is called
 a "lamport" and there are 10^9 lamports in 1 SOL.
+
+## Task 1A - Setup your Solana account
 
 The Solana CLI tools allow developers to manage their accounts. Each account
 has a corresponding keypair which can be used to sign messages to create
@@ -87,7 +87,7 @@ Check your balance to ensure you have at least 1 SOL in your account now:
 $ solana balance
 ```
 
-## Task 2
+## Task 1B - Code!
 
 Time to start coding! Open the `/step-1/src/main.rs` file which contains
 instructions for creating your first Solana transaction.

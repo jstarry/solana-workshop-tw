@@ -12,7 +12,7 @@ core concepts of how to develop applications on Solana.
 
 ## Step 1
 
-Create a simple transaction: [./step-1/README.md](./step-1/README.md)
+Send a transaction: [./step-1/README.md](./step-1/README.md)
 
 **Prize**: 1 `WS1` token, redeemable for a [Workshop Sticker #1]
 

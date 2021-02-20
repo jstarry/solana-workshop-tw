@@ -1,4 +1,4 @@
-# Create an SPL Token
+# Step 2 - Create an SPL Token
 
 The goal of this step is to use Rust to send a Solana transaction
 which creates an SPL Token account.
@@ -15,11 +15,11 @@ SPL Token accounts can only hold tokens from one mint and so on Solana,
 users can own many SPL Token accounts. Each of the SPL Token accounts
 specifies the address which owns.
 
-## Task 1
+## Task 2A - Learn about accounts
 
-In order to create and initialize an SPL Token account, we first need a Solana
-account. Solana accounts are used for storing data on-chain and are similar
-to files in an operating system. They have the following attributes:
+In order to create and initialize an SPL Token account, we need to create
+a new Solana account. Solana accounts are used for storing data on the blockchain
+and are similar to files in an operating system. They have the following attributes:
 
 ```rust
 pub struct Account {
@@ -75,3 +75,14 @@ Rent fees can be avoided by storing enough lamports in an account to cover 2 yea
 of rent. Accounts with sufficient rent for 2 years are called rent-exempt accounts.
 Rent can be calculated using the [getMinimumBalanceForRentExemption](https://docs.rs/solana-client/1.5.8/solana_client/rpc_client/struct.RpcClient.html#method.get_minimum_balance_for_rent_exemption)
 RPC method.
+
+## Task 2B - Code!
+
+Time to start coding! Open the `/step-2/src/main.rs` file which contains
+instructions for creating your first SPL Token account
+
+When you're finished, run the following command:
+
+```sh
+$ cargo run
+```
