@@ -22,5 +22,5 @@ Create an SPL Token account: [./step-2/README.md](./step-2/README.md)
 
 **Prize**: 1 `WS2` token, redeemable for a [Workshop Sticker #2]
 
-[Workshop Sticker #1]: (https://defi-workshop.netlify.app/address/Akp5NZGTP24LWFUnMZywdi7G1ig9KZoKUhCTmomh9Swm)
-[Workshop Sticker #2]: (https://defi-workshop.netlify.app/address/8UPdrRe1FajsbHgpB6tgpghv8C3JmRvmjZMhrKDAK6aL)
+[Workshop Sticker #1]: https://defi-workshop.netlify.app/address/Akp5NZGTP24LWFUnMZywdi7G1ig9KZoKUhCTmomh9Swm
+[Workshop Sticker #2]: https://defi-workshop.netlify.app/address/8UPdrRe1FajsbHgpB6tgpghv8C3JmRvmjZMhrKDAK6aL
