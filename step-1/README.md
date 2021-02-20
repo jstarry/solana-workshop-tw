@@ -29,7 +29,7 @@ a "lamport" and there are 10^9 lamports in 1 SOL.
 
 The Solana CLI tools allow developers to manage their accounts. Each account
 has a corresponding keypair which can be used to sign messages to create
-signatures. Anyone create a new keypair, there are roughly 2^255 valid
+signatures. Anyone can create a new keypair and there are roughly 2^255 valid
 keypairs (~10^76) which means it's extremely unlikely for someone to randomly
 generate the same keypair. To give perspective, there are roughly 10^80
 atoms in the universe.
