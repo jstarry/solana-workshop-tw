@@ -35,6 +35,7 @@ fn process_instruction(
     //  Tips:
     //   - This instruction should burn exactly one token.
     //   - Pass `&[]` as `signer_keys`, `signer_keys` are not important here
+    //   - `authority_pubkey` is the owner of the token account
     //
     // Doc hints:
     //  - https://docs.rs/spl-token/3.1.0/spl_token/instruction/fn.burn.html
@@ -54,6 +55,11 @@ fn process_instruction(
     //
     //  Now that the token has been burned, we don't need the token account anymore.
     //  The remaining lamports can be reclaimed by closing the account.
+    //
+    //  Tips:
+    //   - `account_pubkey` is the token account to be closed
+    //   - `destination_pubkey` is the account that will receive the token account's lamports
+    //   - `owner_pubkey` is the owner of the token account
     //
     // Doc hints:
     //  - https://docs.rs/spl-token/3.1.0/spl_token/instruction/fn.close_account.html
