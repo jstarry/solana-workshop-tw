@@ -7,6 +7,8 @@ tasks:
   - init: |
       (cd step-1 && cargo build)
       (cd step-2 && cargo build)
+      (cd step-3/program && cargo build-bpf)
+      (cd step-3/client && cargo build)
   - command: solana-test-validator
 github:
   prebuilds:
@@ -23,5 +25,8 @@ github:
 
 ports:
   - port: 8899
+    onOpen: ignore
   - port: 8900
+    onOpen: ignore
   - port: 9900
+    onOpen: ignore

@@ -1,0 +1,11 @@
+[package]
+name = "solana-workshop-tw-step-3"
+version = "0.1.0"
+edition = "2018"
+
+[dependencies]
+solana-program = "1.5.0"
+spl-token = { version = "3.0.1", features = ["no-entrypoint"] }
+
+[lib]
+crate-type = ["cdylib", "lib"]
