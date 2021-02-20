@@ -71,12 +71,13 @@ fn main() {
         .send_and_confirm_transaction_with_spinner(&tx)
         .expect("tx failed");
 
-    // Step 6: Uncomment and run `cargo run`
+    // Step 6: Uncomment the println's below and run `cargo run`
     //
     //   This will print the signature of your transaction. Copy and paste the signature into
     //   the workshop block explorer to see if it was successful: https://defi-workshop.netlify.app/
     //
     //  - Note: be sure your transaction variable is named `tx`
+    //
     println!("Created Memo: {}", memo);
     println!("Transaction Signature: {}", utils::tx_signature(&tx));
 }
