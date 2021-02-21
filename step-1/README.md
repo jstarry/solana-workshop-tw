@@ -95,6 +95,7 @@ instructions for creating your first Solana transaction.
 When you're finished, run the following command:
 
 ```sh
+$ cd step-1
 $ cargo run
 ```
 
@@ -110,7 +111,4 @@ a few Solana packages:
 
 Open up the [Workshop Explorer](https://defi-workshop.netlify.app/) and search for your
 transaction's signature to check if your transaction has been finalized (and permanently stored on
-the blockchain!).
-
-If you're at the in-person workshop, send Justin a link to your transaction to receive
-a Workshop Sticker #1 token :)
+the blockchain!). If successful, let Justin know and you will receive a Workshop Sticker #1 (WS1) token.

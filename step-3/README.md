@@ -50,17 +50,21 @@ instructions for writing your first Solana program.
 When you're finished, run the following command:
 
 ```sh
+$ cd step-3/program
 $ cargo build-bpf
 ```
 
 ## Task 3B - Deploy your program!
 
-After building your program, you can deploy it to the blockchain with
-the following command:
+After building your program, you can deploy it to the blockchain by
+following the prompt in your terminal.
 
-```sh
-$ solana program deploy ./target/deploy/solana_workshop_tw_step_3.so
-```
+Open up the [Workshop Explorer](https://defi-workshop.netlify.app/) and search for your
+program id to check if your program has been deployed.
+
+If you're at the in-person workshop, use your program in Step 2 to create a token
+account for Workshop Sticker #3 tokens. Then, send Justin a link to your program to receive
+a Workshop Sticker #3 token :)
 
 ## Task 3C - Call your program!
 
@@ -70,5 +74,16 @@ instructions for calling your Solana program.
 When you're finished, run the following command:
 
 ```sh
+$ cd step-3/client
 $ cargo run
 ```
+
+## Task 3D - Receive sticker token!
+
+Open up the [Workshop Explorer](https://defi-workshop.netlify.app/) and search for the
+account's address to check if your sticker token has been burned. Once burned,
+send Justin a link to your transaction to receive a real sticker!
+
+If you're at the in-person workshop, use your program in Step 2 to create a token
+account for Workshop Sticker #4 tokens. After receiving your first real sticker,
+you are eligible to receive a Workshop Sticker #4 token :)
