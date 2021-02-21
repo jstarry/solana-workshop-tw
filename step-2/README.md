@@ -97,6 +97,7 @@ instructions for creating your first SPL Token account
 When you're finished, run the following command:
 
 ```sh
+$ cd step-2
 $ cargo run
 ```
 

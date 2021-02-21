@@ -4,12 +4,6 @@ tasks:
   - before: |
       gp env PATH=~/.local/share/solana/install/active_release/bin:$PATH
       solana config set -u testnet
-  - init: |
-      (cd step-1 && cargo build)
-      (cd step-2 && cargo build)
-      (cd step-3/program && cargo build-bpf)
-      (cd step-3/client && cargo build)
-  - command: solana-test-validator
 github:
   prebuilds:
     # enable for the master/default branch (defaults to true)
@@ -24,6 +18,8 @@ github:
     addComment: true
 
 ports:
+  - port: 1024
+    onOpen: ignore
   - port: 8899
     onOpen: ignore
   - port: 8900
