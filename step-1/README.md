@@ -69,7 +69,13 @@ $ solana balance
 
 To do anything interesting, we will need some SOL. The Solana testnet cluster
 provides a public service called a faucet which can be used to airdrop
-new SOL for free. Run the airdrop command to get some free SOL on testnet:
+new SOL for free. First, switch to the testnet cluster:
+
+```sh
+$ solana config set -u testnet
+````
+
+Then, run the airdrop command to get some free SOL on testnet:
 
 ```sh
 $ solana airdrop 1
